@@ -9,7 +9,7 @@ import { User } from 'src/models/user.class';
   styleUrls: ['./dialog-edit-adress.component.scss']
 })
 export class DialogEditAdressComponent implements OnInit {
-  user: User;
+  user: User = new User();
   userId: string;
   loading = false;
   constructor(public dialogRef: MatDialogRef<DialogEditAdressComponent>, private firestore: AngularFirestore) { }

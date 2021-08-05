@@ -9,7 +9,7 @@ import { User } from 'src/models/user.class';
   styleUrls: ['./dialog-edit-user.component.scss']
 })
 export class DialogEditUserComponent implements OnInit {
-  user: User;
+  user: User = new User();
   userId: string;
   loading = false;
   birthDate = Date;
@@ -22,10 +22,15 @@ export class DialogEditUserComponent implements OnInit {
 
   saveUser() {
     this.loading = true;
-    this.firestore.collection('users').doc(this.userId).update(this.user.toJSON()).then(() => {
-      this.loading = false;
-      this.dialogRef.close();
-    })
+    if (this.userId) {
+      this.firestore.collection('users').doc(this.userId).update(this.user.toJSON()).then(() => {
+        this.loading = false;
+        this.dialogRef.close();
+      })
+    } else {
+      // Throw error
+    }
+
   }
 
 }
