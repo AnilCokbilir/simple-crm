@@ -1,0 +1,46 @@
+mat-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.add-user-btn {
+    position: absolute;
+    right: 56px;
+    bottom: 56px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    tr {
+        border-bottom: 1px solid gray;
+        &:first-child {
+            cursor: unset;
+            &:hover {
+                background-color: unset;
+            }
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+        cursor: pointer;
+        td {
+            height: 48px;
+            &:first-child {
+                padding-left: 16px;
+            }
+        }
+        &:hover {
+            background-color: rgba(128, 128, 128, 0.4);
+        }
+    }
+    th {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        font-weight: 500;
+        text-align: start;
+        &:first-child {
+            padding-left: 16px;
+        }
+    }
+}
